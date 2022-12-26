@@ -1,0 +1,2 @@
+AFRAME.registerComponent("my-text",{init:function(){var e=document.getElementById("imeges"),i=[];for(let t=0;t<e.children.length;t++)i.push(e.children[t].id);i.forEach(t=>{var e={x:6*Math.random()-3,y:3*Math.random(),z:6*Math.random()-3},i=document.createElement("a-entity"),e=(i.setAttribute("position",e),document.createElement("a-image"));e.setAttribute("src","#"+t),e.setAttribute("width",2.2354948805),e.setAttribute("height",1),i.appendChild(e),this.el.appendChild(i)})}});
+//# sourceMappingURL=v2.js.map

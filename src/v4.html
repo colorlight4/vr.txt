@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+    <script src="script/v4.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #whight">
+      <!-- Player Rig -->
+      <a-entity id="rig">
+        <a-camera id="camera">
+          <!-- Enable the cursor to test a desktop browser -->
+          <!-- <a-cursor></a-cursor> -->
+        </a-camera>
+        <a-entity
+          laser-controls="hand: left; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        ></a-entity>
+        <a-entity
+          laser-controls="hand: right; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        ></a-entity>
+      </a-entity>
+      <!-- End Player Rig -->
+
+      <a-assets id="imeges"> </a-assets>
+
+      <a-link
+        class="clickable"
+        position="0 -2 0"
+        rotation="90 0 0"
+        href="index.html"
+        title="home"
+        image="#homeThumbnail"
+      ></a-link>
+
+      <a-cylinder id="damy" position="0 0.88314 0" material="color: #ffa95c" geometry="radius: 0.26; openEnded: false; height: 1.8"></a-cylinder>
+
+      <a-entity id="container" scale="0.8 0.8 0.8" position="-0.53773 2.44755 -2.0752">
+        <a-troika-text
+          id="h1" troika-text="color: #ff36bb; value: Snow Crash; fontSize: 0.67; curveRadius: 0; anchor: center; outlineWidth: 0; outlineOffsetY: 0; outlineOffsetX: 0; overflowWrap: break-word; textIndent: 0" rotation="0 -26.25 0"
+          position="-0.13959 -0.96192 -0.56257"
+          color="#99F"
+          value="Hello a-troika-text primitive!"
+          font="./fonts/Dharma_Punk_2.ttf"
+        ></a-troika-text>
+        <a-troika-text
+          id="text1" troika-text="color: #202032; depthOffset: 0; curveRadius: 3.15; fontSize: 0.2; letterSpacing: 0; lineHeight: 1.03; outlineBlur: 0; overflowWrap: normal; value:  is a science fiction novel by the American writer Neal Stephenson, published in 1992. Like many of Stephenson's novels, it covers history, linguistics, anthropology, archaeology, religion, computer science, politics, cryptography, memetics, and philosophy.[1][not verified in body]  In his 1999 essay "In the Beginning... Was the Command Line", Stephenson explained the title of the novel as his term for a particular software failure mode on the early Macintosh computer. Stephenson wrote about the Macintosh that "When the computer crashed and wrote gibberish into the bitmap, the result was something that looked vaguely like static on a broken television set—a 'snow crash'".[2] Stephenson has also mentioned that Julian Jaynes' book The Origin of Consciousness in the Breakdown of the Bicameral Mind was one of the main influences on Snow Crash.[3]  Stephenson originally planned Snow Crash as a computer-generated graphic novel in collaboration with artist Tony Sheeder.[4] In the author's acknowledgments (in some editions), Stephenson recalls:      "it became clear that the only way to make the Mac do the things we needed was to write a lot of custom image-processing software. I have probably spent more hours coding during the production of this work than I did actually writing it, even though it eventually turned away from the original graphic concept..."[5]   Snow Crash was nominated for both the British Science Fiction Award in 1993 and the Arthur C. Clarke Award in 1994.[6][7] ; anchor: left; maxWidth: 8.62; whiteSpace: normal; baseline: top; textIndent: 1.64; strokeColor: #40802a; strokeWidth: 0"In the Beginning... Was the Command Line", Stephenson explained the title of the novel as his term for a particular software failure mode on the early Macintosh computer. Stephenson wrote about the Macintosh that "When the computer crashed and wrote gibberish into the bitmap, the result was something that looked vaguely like static on a broken television set—a 'snow crash'".[2] Stephenson has also mentioned that Julian Jaynes' book The Origin of Consciousness in the Breakdown of the Bicameral Mind was one of the main influences on Snow Crash.[3]  Stephenson originally planned Snow Crash as a computer-generated graphic novel in collaboration with artist Tony Sheeder.[4] In the author's acknowledgments (in some editions), Stephenson recalls:      "it became clear that the only way to make the Mac do the things we needed was to write a lot of custom image-processing software. I have probably spent more hours coding during the production of this work than I did actually writing it, even though it eventually turned away from the original graphic concept..."[5]   Snow Crash was nominated for both the British Science Fiction Award in 1993 and the Arthur C. Clarke Award in 1994.[6][7] "
+          position="-0.37237 -0.91121 -0.48633"
+          color="#99F"
+          value="Hello petrs primitive!"
+        ></a-troika-text>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
