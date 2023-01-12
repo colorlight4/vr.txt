@@ -1,67 +1,316 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+  </head>
 
-<head>
-  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
-
-</head>
-
-<body>
-  <a-scene background="color: #whight">
-
-
-    <!-- Player Rig -->
-    <a-entity id="rig">
-      <a-camera id="camera">
-        <!-- Enable the cursor to test a desktop browser -->
-        <!-- <a-cursor></a-cursor> -->
-      </a-camera>
-      <a-entity laser-controls="hand: left; model: true;" raycaster="near: 0.1; far: 10; objects: .clickable">
+  <body>
+    <a-scene background="color: #whight">
+      <!-- Player Rig -->
+      <a-entity id="rig">
+        <a-camera id="camera">
+          <!-- Enable the cursor to test a desktop browser -->
+          <!-- <a-cursor></a-cursor> -->
+        </a-camera>
+        <a-entity
+          laser-controls="hand: left; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        >
+        </a-entity>
+        <a-entity
+          laser-controls="hand: right; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        >
+        </a-entity>
       </a-entity>
-      <a-entity laser-controls="hand: right; model: true;" raycaster="near: 0.1; far: 10; objects: .clickable">
+      <!-- End Player Rig -->
+
+      <a-assets id="imeges">
+        <img id="p1" src="img/v5/v5-part-1.png" alt="" />
+        <img id="p1b1" src="img/v5/v5-part-1-backroom.png" alt="" />
+        <img id="br-cyberpunk" src="img/v5/v5-cyberpunk-broom.png" alt="" />
+        <img id="gls" src="img/v5/glitsh.0.gif" alt="" />
+      </a-assets>
+
+      <!-- Home portall -->
+      <a-link
+        class="clickable"
+        position="0 -2 0"
+        rotation="90 0 0"
+        href="index.html"
+        title="home"
+        image="#homeThumbnail"
+      >
+      </a-link>
+      <!-- End Home portall -->
+
+      <!-- humen dummy -->
+      <a-cylinder
+        id="dummy"
+        position="0 0.88314 0"
+        material="color: #ffa95c; visible: false; vertexColors: face; wireframe: false; transparent: false; side: double"
+        geometry="radius: 0.26; openEnded: false; height: 1.7"
+      ></a-cylinder>
+      <!-- End  humen dammy -->
+
+      <!-- page 1 begin -->
+
+      <a-entity id="part-1" rotation="0 79.25438701147112 0" position="0 0 3.2">
+        <!-- Using the asset management system. -->
+        <a-curvedimage
+          id="curve_11"
+          body="sphereRadius: NaN; shape: mesh; type: static"
+          material="side: back; width: 512; color: #ffffff; wireframe: false"
+          geometry="radius: 1.6; thetaLength: 180; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -180"
+          position="0 1.111 -1.6"
+          src="#p1"
+          height="3.0"
+          radius="5.7"
+          rotation="0 100 0"
+        >
+        </a-curvedimage>
+
+        <a-entity
+          id="gls_11"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -21.86"
+          position="0 1.44607 0.48642"
+          rotation="0 100 0"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv1"
+          rotation="0 8.439668322277026 0"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false"
+          position="1.58959 2.0447 -0.26198"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-21"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 217.74; openEnded: true; thetaStart: 0.84; radius: 1.14; height: 2.18; buffer: true"
+          position="1.47307 1.46196 -0.32429"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-31"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 99.96; openEnded: true; thetaStart: 147.69; radius: 1.69; height: 2.18; buffer: true"
+          position="-0.01188 1.47962 0.47013"
+        >
+        </a-entity>
       </a-entity>
-    </a-entity>
-    <!-- End Player Rig -->
 
-    <a-assets id="imeges">
-      <img id="p1" src="img/v5/v5-part-1.png" alt="" />
-      <img id="p1b1" src="img/v5/v5-part-1-backroom.png" alt="" />
+      <!-- page 1 end -->
 
-    </a-assets>
+      <!-- page 2 begin -->
 
-    <!-- Home portall -->
-    <a-link class="clickable" position="0 -2 0" rotation="90 0 0" href="index.html" title="home" image="#homeThumbnail">
-    </a-link>
-    <!-- End Home portall -->
+      <a-entity
+        id="part-2"
+        position="0 0 -3.2"
+        rotation="0 -121.07171168909427 0"
+      >
+        <!-- Using the asset management system. -->
+        <a-curvedimage
+          id="curve_12"
+          material="side: back; width: 512; wireframe: false; color: #ffffff"
+          geometry="radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -180"
+          position="0 1.17687 0.48642"
+          src="#p1"
+          height="3.0"
+          radius="5.7"
+          rotation="0 100 0"
+        >
+        </a-curvedimage>
 
-    <!-- humen dummy -->
-    <a-cylinder id="dummy" position="0 0.88314 0"
-      material="color: #ffa95c; visible: false; vertexColors: face; wireframe: false; transparent: false"
-      geometry="radius: 0.26; openEnded: false; height: 1.7"></a-cylinder>
-    <!-- End  humen dammy -->
+        <a-entity
+          id="back-curv1"
+          rotation="0 8.439668322277026 0"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false"
+          position="1.58959 2.0447 -0.26198"
+        >
+        </a-entity>
 
-    <!-- Using the asset management system. -->
-    <a-curvedimage id="curve_1" material="side: back; width: 512"
-      geometry="radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -21.86"
-      position="0 1.44607 0.48642" src="#p1" height="3.0" radius="5.7" rotation="0 100 0">
-    </a-curvedimage>
+        <a-entity
+          id="back-curv-22"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 217.74; openEnded: true; thetaStart: 0.84; radius: 1.14; height: 2.18; buffer: true"
+          position="1.47307 1.46196 -0.32429"
+        >
+        </a-entity>
 
+        <a-entity
+          id="back-curv-32"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 99.96; openEnded: true; thetaStart: 147.69; radius: 1.69; height: 2.18; buffer: true"
+          position="-0.01188 1.47962 0.47013"
+        >
+        </a-entity>
+      </a-entity>
 
+      <!-- page 2 end -->
 
+      <!-- page 3 begin -->
 
+      <a-entity
+        id="part-3"
+        position="0 0 3.2"
+        rotation="0 30.522607662209214 0"
+      >
+        <!-- Using the asset management system. -->
+        <a-curvedimage
+          id="curve_13"
+          material="side: back; width: 512; color: #ffffff; wireframe: false"
+          geometry="radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -21.86"
+          position="0 1.44607 0.48642"
+          src="#p1"
+          height="3.0"
+          radius="5.7"
+          rotation="0 100 0"
+        >
+        </a-curvedimage>
 
-    <!-- vorlage geht mit transperens -->
-    <!-- <a-entity id="back" position="1.85568 1.85564 -0.60269" geometry="primitive: plane" material="src:#p1b1" scale="2.22 1.21 1"
-      rotation="0 -68.71826611681041 0"></a-entity> -->
+        <a-entity
+          id="back-curv3"
+          rotation="0 8.439668322277026 0"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false"
+          position="1.58959 2.0447 -0.26198"
+        >
+        </a-entity>
 
-    <!-- so geht es nicht -->
-    <!-- <a-curvedimage id="back-curv1" geometry="primitive: cylinder; radius: 0.4" position="2.31386 1.85564 -1.0702" material="src:#p1b1"></a-curvedimage> -->
-    <a-entity id="back-curv" rotation="0 8.439668322277026 0" material="src:#p1b1; side: back"
-      geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false" position="1.58959 2.0447 -0.26198">
-    </a-entity>
-    <!-- === end scene === -->
-  </a-scene>
-</body>
+        <a-entity
+          id="back-curv-23"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 217.74; openEnded: true; thetaStart: 0.84; radius: 1.14; height: 2.18; buffer: true"
+          position="1.47307 1.46196 -0.32429"
+        >
+        </a-entity>
 
+        <a-entity
+          id="back-curv-33"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 99.96; openEnded: true; thetaStart: 147.69; radius: 1.69; height: 2.18; buffer: true"
+          position="-0.01188 1.47962 0.47013"
+        >
+        </a-entity>
+      </a-entity>
+
+      <!-- page 3 end -->
+
+      <!-- page 4 begin -->
+
+      <a-entity
+        id="part-4"
+        position="0 0 0"
+        rotation="0.022345354010102104 -102.7238842156199 0"
+      >
+        <!-- Using the asset management system. -->
+        <a-curvedimage
+          id="curve_14"
+          material="side: back; width: 512; color: #ffffff; wireframe: false"
+          geometry="radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -21.86"
+          position="0 1.44607 0.48642"
+          src="#p1"
+          height="3.0"
+          radius="5.7"
+          rotation="0 100 0"
+        >
+        </a-curvedimage>
+
+        <a-entity
+          id="back-curv4"
+          rotation="0 8.439668322277026 0"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false"
+          position="1.58959 2.0447 -0.26198"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-24"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 217.74; openEnded: true; thetaStart: 0.84; radius: 1.14; height: 2.18; buffer: true"
+          position="1.47307 1.46196 -0.32429"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-34"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 99.96; openEnded: true; thetaStart: 147.69; radius: 1.69; height: 2.18; buffer: true"
+          position="-0.01188 1.47962 0.47013"
+        >
+        </a-entity>
+      </a-entity>
+
+      <!-- page 4 end -->
+
+      <!-- page 5 begin -->
+
+      <a-entity
+        id="part-5"
+        position="6.61443 0 0.08867"
+        rotation="0 -91.59188721402313 0"
+      >
+        <!-- Using the asset management system. -->
+        <a-curvedimage
+          id="curve_15"
+          material="side: back; width: 512; color: #fffc69"
+          geometry="radius: 1.69; thetaLength: 179.29; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -21.86"
+          position="0 1.44607 0.48642"
+          src="#p1"
+          height="3.0"
+          radius="5.7"
+          rotation="0 100 0"
+        >
+        </a-curvedimage>
+
+        <a-entity
+          id="back-curv5"
+          rotation="0 8.439668322277026 0"
+          material="src:#br-cyberpunk; side: back"
+          geometry="primitive:  cylinder; thetaLength: 213.55; openEnded: false"
+          position="1.58959 2.0447 -0.26198"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-25"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 217.74; openEnded: true; thetaStart: 0.84; radius: 1.14; height: 2.18; buffer: true"
+          position="1.47307 1.46196 -0.32429"
+        >
+        </a-entity>
+
+        <a-entity
+          id="back-curv-35"
+          rotation="0 8.439668322277026 0"
+          material="src: ; side: double; shader: flat; color: #ffffff; height: 259.14"
+          geometry="primitive:  cylinder; thetaLength: 99.96; openEnded: true; thetaStart: 147.69; radius: 1.69; height: 2.18; buffer: true"
+          position="-0.01188 1.47962 0.47013"
+        >
+        </a-entity>
+      </a-entity>
+
+      <!-- page 5 end -->
+
+      <!-- === end scene === -->
+    </a-scene>
+  </body>
 </html>

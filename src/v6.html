@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene background="color: #whight" physics>
+      <!-- Player Rig -->
+      <a-entity id="rig">
+        <a-camera id="camera">
+          <!-- Enable the cursor to test a desktop browser -->
+          <!-- <a-cursor></a-cursor> -->
+        </a-camera>
+        <a-entity
+          laser-controls="hand: left; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        >
+        </a-entity>
+        <a-entity
+          laser-controls="hand: right; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        >
+        </a-entity>
+      </a-entity>
+      <!-- End Player Rig -->
+
+      <a-assets id="imeges">
+        <img id="p1" src="img/v5/v5-part-1.png" alt="" />
+        <img id="p1b1" src="img/v5/v5-part-1-backroom.png" alt="" />
+        <img id="br-cyberpunk" src="img/v5/v5-cyberpunk-broom.png" alt="" />
+        <img id="gls" src="img/v5/glitsh.0.gif" alt="" />
+      </a-assets>
+
+      <!-- Home portall -->
+      <a-link
+        class="clickable"
+        position="0 -2 0"
+        rotation="90 0 0"
+        href="index.html"
+        title="home"
+        image="#homeThumbnail"
+      >
+      </a-link>
+      <!-- End Home portall -->
+
+      <!-- humen dummy -->
+      <a-cylinder
+        id="dummy"
+        position="0 0.88314 0"
+        material="color: #ffa95c; visible: false; vertexColors: face; wireframe: false; transparent: false; side: double"
+        geometry="radius: 0.26; openEnded: false; height: 1.7"
+      ></a-cylinder>
+      <!-- End  humen dammy -->
+
+      <!-- begin maze -->
+      <a-entity id="maze" position="0 -0.11101 -1.76882">
+        <!-- begin r -->
+        <a-entity id="r" position="0.25 0 -3.2">
+          <!-- begin part-1 -->
+          <a-entity id="part-1" position="0 0 3.2">
+            <a-curvedimage
+              id="curve_11"
+              position="0 1.111 -1.6"
+              material="side: back; width: 512; color: #ffffff; wireframe: false"
+              geometry="radius: 1.6; thetaLength: 180; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -180"
+              src="#p1"
+              height="3.0"
+              radius="5.7"
+            >
+            </a-curvedimage>
+
+            <a-entity
+              id="back_1"
+              geometry="primitive: cylinder; height: 2.23; openEnded: true; thetaLength: 180; thetaStart: 180; segmentsRadial: 12; segmentsHeight: 2"
+              scale="1.87 1 1.6"
+              position="0 1.111 -1.6"
+              material="side: back; src: #p1b1"
+            ></a-entity>
+          </a-entity>
+          <!-- end part-1 -->
+
+          <!-- begin part-2 -->
+          <a-entity id="part-2">
+            <a-curvedimage
+              id="curve_12"
+              position="0 1.11091 -1.6"
+              material="side: back; width: 512; color: #ffffff; wireframe: false"
+              geometry="radius: 1.6; thetaLength: 180; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: -180"
+              src="#p1"
+              height="3.0"
+              radius="5.7"
+            >
+            </a-curvedimage>
+          </a-entity>
+          <!-- end part-2 -->
+        </a-entity>
+        <!-- end r -->
+
+        <!-- begin l -->
+        <a-entity id="l" position="-0.25 0 -4.8">
+          <!-- begin part-3 -->
+          <a-entity id="part-3" position="0 0 3.2">
+            <a-curvedimage
+              id="curve_13"
+              position="0 1.11091 -1.6"
+              material="side: back; width: 512; color: #ffffff; wireframe: false"
+              geometry="radius: 1.6; thetaLength: 180; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: 0"
+              src="#p1"
+              height="3.0"
+              radius="5.7"
+            >
+            </a-curvedimage>
+          </a-entity>
+          <!-- end part-3 -->
+
+          <!-- begin part-4 -->
+          <a-entity id="part-4" position="0 0 0">
+            <a-curvedimage
+              id="curve_14"
+              position="0 1.11091 -1.6"
+              material="side: back; width: 512; color: #ffffff; wireframe: false"
+              geometry="radius: 1.6; thetaLength: 180; segmentsHeight: 2; segmentsRadial: 13; height: 2.23; thetaStart: 0"
+              src="#p1"
+              height="3.0"
+              radius="5.7"
+            >
+            </a-curvedimage>
+          </a-entity>
+          <!-- end part-4 -->
+        </a-entity>
+        <!-- end l -->
+      </a-entity>
+      <!-- end maze -->
+
+      <!-- === end scene === -->
+    </a-scene>
+  </body>
+</html>
