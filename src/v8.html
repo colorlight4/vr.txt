@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: whight">
+      <!-- Player Rig -->
+      <a-entity id="rig">
+        <a-camera id="camera">
+          <!-- Enable the cursor to test a desktop browser -->
+          <!-- <a-cursor></a-cursor> -->
+        </a-camera>
+        <a-entity
+          laser-controls="hand: left; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        ></a-entity>
+        <a-entity
+          laser-controls="hand: right; model: true;"
+          raycaster="near: 0.1; far: 10; objects: .clickable"
+        ></a-entity>
+      </a-entity>
+      <!-- End Player Rig -->
+
+      <a-assets>
+        <img id="i1" src="./img/v8/seiten_1.png" />
+        <img id="i2" src="./img/v8/seiten_2.png" />
+        <img id="i3" src="./img/v8/seiten_3.png" />
+        <img id="i4" src="./img/v8/seiten_4.png" />
+        <img id="i5" src="./img/v8/seiten_5.png" />
+      </a-assets>
+
+      <!-- begin Site 1 -->
+      <a-entity
+        id="site1"
+        visible="true"
+        position="0 1.251 -1"
+        rotation="0 0 0"
+        scale="1 1 1"
+      >
+        <a-image
+          id="s1" position="0.09194 0 0" geometry="primitive: cylinder; openEnded: true"
+          material="side: back"
+          src="#i1"
+          width="4.32"
+          height="2.5"
+        >
+        </a-image>
+      </a-entity>
+      <!-- end Site 1 -->
+
+      <!-- begin Site 2 -->
+      <a-entity
+        id="site2"
+        visible="true"
+        position="1.50168 1.251 -0.9"
+        rotation="0 180 0"
+        scale="1 1 1"
+      >
+        <a-image
+          id="s2"
+          material="side: front"
+          src="#i2"
+          width="4.32"
+          height="2.5"
+        >
+        </a-image>
+      </a-entity>
+      <!-- end Site 2 -->
+
+      <!-- begin Site 3 -->
+      <a-entity
+        id="site3"
+        visible="true"
+        position="-1.44739 1.251 -0.9"
+        rotation="0 90 0"
+        scale="1 1 1"
+      >
+        <a-image
+          id="s3"
+          material="side: front"
+          src="#i3"
+          width="4.32"
+          height="2.5"
+        >
+        </a-image>
+      </a-entity>
+      <!-- end Site 3 -->
+
+      <!-- begin Site 4 -->
+      <a-entity
+        id="site4"
+        visible="true"
+        position="-0.75934 1.251 0.66031"
+        rotation="0 -90 0"
+        scale="1 1 1"
+      >
+        <a-image
+          id="s4"
+          material="side: front"
+          src="#i4"
+          width="4.32"
+          height="2.5"
+        >
+        </a-image>
+      </a-entity>
+      <!-- end Site 4 -->
+
+      <!-- begin Site 5 -->
+      <!-- <a-entity
+        id="site5"
+        visible="true"
+        position="0.81542 1.251 0.72678"
+        rotation="0 0 0"
+        scale="1 1 1"
+      >
+        <a-image
+          id="s5" position="0 0 -0.09863"
+          material="side: front"
+          src="#i5"
+          width="4.32"
+          height="2.5"
+        >
+        </a-image>
+      </a-entity> -->
+      <!-- end Site 5 -->
+
+      <!-- portal home begin -->
+      <a-link
+        class="clickable"
+        position="0 -2 0"
+        rotation="90 0 0"
+        href="index.html"
+        title="home"
+        image="#homeThumbnail"
+      ></a-link>
+      <!-- portal home end -->
+    </a-scene>
+  </body>
+</html>
